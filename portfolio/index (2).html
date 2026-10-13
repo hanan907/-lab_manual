@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdul Hanan — Creative Developer Portfolio</title>
+<style>
+:root{--paper:#f7f6f1;--ink:#171817;--muted:#777871;--blue:#29369c;--line:#deddd5;--max:1240px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}.shell{width:min(var(--max),calc(100% - 64px));margin:auto}
+header{height:78px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;font-size:12px}
+.brand{display:flex;gap:10px;align-items:center;font-weight:bold}.mark{border:1px solid;border-radius:50%;width:29px;height:29px;display:grid;place-items:center}
+nav{display:flex;gap:25px;color:#555}.pill{border:1px solid;border-radius:30px;padding:12px 17px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+.hero{padding:70px 0 30px}.eyebrow{display:flex;justify-content:space-between;color:var(--muted);font-size:10px;letter-spacing:.13em;text-transform:uppercase;margin-bottom:24px}
+h1{font-size:clamp(58px,11vw,150px);line-height:.82;letter-spacing:-.09em;text-transform:uppercase;margin:0}h1 span{display:block;margin-left:9%;color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.hero-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:35px;gap:25px}.intro{max-width:360px;font-size:14px;line-height:1.7}.intro p{margin:0 0 15px}.under{font-size:10px;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid;padding-bottom:5px}.location{font-size:11px;line-height:1.7;color:var(--muted);text-align:right}
+.orb-stage{height:min(67vw,690px);min-height:440px;position:relative;overflow:hidden;margin-top:38px;display:grid;place-items:center;border-block:1px solid #e9e7df;background:radial-gradient(ellipse at 50% 65%,#eef0d8 0,transparent 48%),linear-gradient(135deg,#fbfaf7,#f2f1ea)}
+#orbCanvas{width:100%;height:100%;display:block;outline:none}
+.orb-label,.orb-side,.scrollcue{position:absolute;pointer-events:none;font-size:11px;line-height:1.6;z-index:2}.orb-label{left:4%;top:43%;font-weight:bold}.orb-label small{display:block;font-weight:normal;color:var(--muted)}.orb-side{right:4%;bottom:15%;text-align:right;color:var(--muted)}.orb-side b{display:block;color:var(--ink)}.scrollcue{bottom:22px;left:50%;transform:translateX(-50%);white-space:nowrap;color:#555987;font-size:9px;letter-spacing:.12em;text-transform:uppercase}
+.ticker{overflow:hidden;border-bottom:1px solid var(--line);padding:17px 0}.track{display:flex;gap:30px;width:max-content;animation:ticker 24s linear infinite;font-size:10px;letter-spacing:.13em;text-transform:uppercase}.track b{color:var(--blue)}
+section.content{padding:105px 0;border-bottom:1px solid var(--line)}.sectionhead{display:grid;grid-template-columns:1fr 2fr;gap:30px;margin-bottom:48px}.index{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}h2{font-size:clamp(38px,6vw,76px);line-height:.95;letter-spacing:-.07em;font-weight:600;margin:0}
+.aboutgrid{display:grid;grid-template-columns:1fr 1fr;gap:9%}.aboutgrid>p{font-size:clamp(17px,2vw,23px);line-height:1.5;margin:0;max-width:500px}.facts{display:grid;grid-template-columns:1fr 1fr;gap:24px}.fact{border-top:1px solid var(--line);padding-top:12px}.fact small{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}.fact strong{font-size:13px;font-weight:500}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.skill{border:1px solid var(--line);padding:22px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}.skill:hover{background:#eeeee6;transform:translateY(-3px)}.skill small{color:var(--muted);font-size:10px}.skill strong{font-size:clamp(28px,4vw,48px);letter-spacing:-.07em;font-weight:500}.skill p{font-size:12px;color:var(--muted);margin:0}
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:18px}.projectart{height:320px;display:grid;place-items:center;overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,#e8edb9,#faf9f3 60%,#d9dbe7)}.browser{width:78%;background:#faf9f3;box-shadow:0 18px 45px #1617171c;transform:rotate(-4deg)}.browserbar{height:22px;border-bottom:1px solid #ddd;padding:7px 10px}.browserbar i{display:inline-block;width:5px;height:5px;background:#aaa;border-radius:50%;margin-right:4px}.browserbody{padding:22px;min-height:185px}.browserbody small{font-size:8px;letter-spacing:.1em}.browserbody b{display:block;font-size:clamp(25px,4vw,42px);line-height:.9;letter-spacing:-.08em;margin:24px 0 15px}.fake-line{height:5px;background:#ddd;width:70%;margin:7px 0}.darkart{background:#1b1c1a;color:#e7ef75}.code{width:80%;font:12px/2 monospace;transform:rotate(3deg)}.code span{color:#999}.projectinfo{display:flex;justify-content:space-between;padding-top:15px}.projectinfo h3{font-size:16px;font-weight:500;margin:0 0 6px}.projectinfo p,.projectnum{font-size:10px;color:var(--muted);margin:0}.note{font-size:11px;line-height:1.6;color:var(--muted);margin-top:22px}
+.goal{background:var(--blue);color:#f7f6f1;padding:50px;display:grid;grid-template-columns:1fr 2fr;gap:30px}.goal .index{color:#c8cae8}.goal p{max-width:500px;margin:25px 0 0 auto;font-size:14px;line-height:1.7;color:#e0e1f0}
+.contact{text-align:center;padding:110px 0;background:radial-gradient(ellipse at 50% 100%,#eef0d8,transparent 50%)}.contact h2{font-size:clamp(48px,9vw,110px);margin:25px auto;max-width:900px}.contact p{font-size:13px;color:var(--muted)}.contactlinks{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:25px}.contactlinks a{border:1px solid;border-radius:30px;padding:14px 20px;font-size:10px;text-transform:uppercase;letter-spacing:.08em}.contactlinks a:hover{background:var(--ink);color:var(--paper)}
+footer{border-top:1px solid var(--line);padding:22px 0;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.08em}
+@keyframes ticker{to{transform:translateX(-50%)}}
+@media(max-width:720px){.shell{width:calc(100% - 32px)}nav{display:none}.hero{padding-top:50px}h1{font-size:clamp(50px,15vw,95px)}h1 span{margin-left:3%}.hero-bottom{align-items:flex-start;flex-direction:column}.location{text-align:left}.orb-stage{height:520px;min-height:0}.orb-label{top:7%;left:5%}.orb-side{bottom:9%;right:5%}section.content{padding:75px 0}.sectionhead,.aboutgrid,.goal{grid-template-columns:1fr;gap:25px}.sectionhead{margin-bottom:32px}.skills,.projects{grid-template-columns:1fr}.skill{min-height:150px}.projectart{height:270px}.goal{padding:30px 24px}.goal p{margin-left:0}.contact{padding:80px 0}footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track{animation:none}}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<header class="shell">
+<a class="brand" href="#top"><span class="mark">AH</span> Abdul Hanan®</a>
+<nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+<a class="pill" href="#contact">Let’s connect ↗</a>
+</header>
+<main id="top">
+<section class="hero shell">
+<div class="eyebrow"><span>Portfolio / 2026</span><span>Computer Science · Pakistan</span></div>
+<h1>Curious<span>by code.</span></h1>
+<div class="hero-bottom"><div class="intro"><p>I’m Abdul Hanan, a Computer Science student learning to turn ideas into useful and thoughtful digital experiences.</p><a class="under" href="#about">Get to know me ↘</a></div><div class="location">Currently learning web development<br>Based in Pindi Bhattian, Pakistan</div></div>
+</section>
+
+<section class="orb-stage" aria-label="Interactive 3D patterned sphere">
+<div class="orb-label">A little curiosity<br>goes a long way.<small>Interactive 3D study · 001</small></div>
+<canvas id="orbCanvas" aria-label="Spinning blue-patterned 3D ball"></canvas>
+<div class="orb-side"><b>Learning in public</b>HTML / CSS / Python<br>Drag to explore</div>
+<div class="scrollcue">— &nbsp; Drag to rotate · Scroll to zoom · Auto spinning &nbsp; —</div>
+</section>
+<div class="ticker" aria-hidden="true"><div class="track"><span>Creative thinking</span><b>✳</b><span>Web development</span><b>✳</b><span>Keep learning</span><b>✳</b><span>Problem solving</span><b>✳</b><span>Creative thinking</span><b>✳</b><span>Web development</span><b>✳</b><span>Keep learning</span><b>✳</b><span>Problem solving</span><b>✳</b></div></div>
+
+<section class="content shell" id="about">
+<div class="sectionhead"><div class="index">01 / A bit about me</div><h2>Building skills.<br>Finding my way.</h2></div>
+<div class="aboutgrid"><p>I’m studying BS Computer Science at the University of Lahore. I enjoy learning how websites are designed, how code works, and how small ideas can become something people can use.</p>
+<div class="facts">
+<div class="fact"><small>Education</small><strong>BS Computer Science</strong></div><div class="fact"><small>University</small><strong>University of Lahore</strong></div>
+<div class="fact"><small>Current semester</small><strong>6th Semester</strong></div><div class="fact"><small>Based in</small><strong>Pindi Bhattian, Pakistan</strong></div>
+<div class="fact"><small>Interests</small><strong>Web development, programming</strong></div><div class="fact"><small>Off-screen</small><strong>YouTube and exploring ideas</strong></div>
+</div></div></section>
+
+<section class="content shell" id="skills"><div class="sectionhead"><div class="index">02 / What I’m learning</div><h2>The tools I use<br>to get started.</h2></div>
+<div class="skills"><article class="skill"><small>01 / Structure</small><strong>HTML</strong><p>Creating clear, meaningful page structure.</p></article><article class="skill"><small>02 / Style</small><strong>CSS</strong><p>Layouts, responsive design and visual details.</p></article><article class="skill"><small>03 / Logic</small><strong>Python</strong><p>Practising programming fundamentals and problem solving.</p></article></div></section>
+
+<section class="content shell" id="projects"><div class="sectionhead"><div class="index">03 / Selected work</div><h2>Small steps.<br>Real progress.</h2></div>
+<div class="projects">
+<article><div class="projectart"><div class="browser"><div class="browserbar"><i></i><i></i><i></i></div><div class="browserbody"><small>PERSONAL WEBSITE / 001</small><b>HELLO,<br>WORLD.</b><div class="fake-line"></div><div class="fake-line" style="width:48%"></div></div></div></div><div class="projectinfo"><div><h3>Personal Portfolio</h3><p>HTML · CSS · Responsive layout</p></div><span class="projectnum">01 ↗</span></div></article>
+<article><div class="projectart darkart"><div class="code"><span>// learning log</span><br>const goal = "keep learning";<br>const skills = ["HTML", "CSS", "Python"];<br><br><span>// next step</span><br>buildSomethingUseful();<br>return progress;</div></div><div class="projectinfo"><div><h3>Learning Lab</h3><p>Programming practice · Experiments</p></div><span class="projectnum">02 ↗</span></div></article>
+</div><p class="note">These are concept previews, not claims of completed client work. Replace them with screenshots and links when your real projects are ready.</p></section>
+
+<section class="shell" style="padding:0 0 95px"><div class="goal"><div class="index">04 / Where I’m headed</div><div><h2>From student to full-fledged programmer.</h2><p>My goal is to strengthen my programming foundations and grow into a developer with practical web development skills. I’m focused on learning consistently, building projects, and improving with every attempt.</p></div></div></section>
+<section class="contact shell" id="contact"><div class="index">05 / Say hello</div><h2>Let’s make<br>something useful.</h2><p>I’m always open to learning, sharing ideas and connecting with other students.</p><div class="contactlinks"><a href="mailto:your-email@example.com" onclick="if(this.href.endsWith('your-email@example.com')){alert('Replace your-email@example.com with your real email in the HTML.');return false}">Email me ↗</a><a href="#top">Back to top ↑</a></div></section>
+</main>
+<footer class="shell"><span>© 2026 Abdul Hanan</span><span>Made with HTML, CSS & Three.js</span><span>Pindi Bhattian, Pakistan</span></footer>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const canvas = document.getElementById('orbCanvas');
+const stage = canvas.parentElement;
+
+function createPatternTexture() {
+  const w = 2048, h = 1024;
+  const c = document.createElement('canvas'); c.width = w; c.height = h;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = '#fbfaf6'; ctx.fillRect(0, 0, w, h);
+  ctx.strokeStyle = '#29369c'; ctx.lineWidth = 10; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  const cw = 230, ch = 170;
+  for (let row = -1; row < h / ch + 2; row++) {
+    for (let col = -1; col < w / cw + 2; col++) {
+      const x = col * cw + (row % 2 ? 70 : 0), y = row * ch;
+      ctx.beginPath(); ctx.moveTo(x-25,y+105); ctx.lineTo(x+20,y+105);
+      ctx.quadraticCurveTo(x+44,y+105,x+44,y+81); ctx.lineTo(x+44,y+48);
+      ctx.quadraticCurveTo(x+44,y+24,x+68,y+24); ctx.lineTo(x+135,y+24);
+      ctx.quadraticCurveTo(x+159,y+24,x+159,y+48); ctx.lineTo(x+159,y+70);
+      ctx.quadraticCurveTo(x+159,y+94,x+183,y+94); ctx.lineTo(x+255,y+94); ctx.stroke();
+      ctx.beginPath(); ctx.arc(x+190,y+139,26,0,Math.PI*2); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(x+64,y+170); ctx.bezierCurveTo(x+88,y+136,x+120,y+155,x+143,y+170); ctx.stroke();
+    }
+  }
+  // Ring motif and sweeping curve similar to the supplied reference.
+  ctx.lineWidth = 9;
+  ctx.beginPath(); ctx.ellipse(w/2,h/2,570,340,0,0,Math.PI*2); ctx.stroke();
+  ctx.beginPath(); ctx.ellipse(w/2,h/2,390,232,0,0,Math.PI*2); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(-20,h*.52); ctx.bezierCurveTo(w*.2,h*.18,w*.35,h*.84,w*.53,h*.57); ctx.bezierCurveTo(w*.7,h*.32,w*.82,h*.82,w+20,h*.43); ctx.stroke();
+  ctx.fillStyle='#fbfaf6'; ctx.beginPath(); ctx.arc(w/2,h/2,126,0,Math.PI*2); ctx.fill();
+  ctx.strokeStyle='#29369c'; ctx.lineWidth=9; ctx.beginPath(); ctx.arc(w/2,h/2,126,0,Math.PI*2); ctx.stroke();
+  const texture = new THREE.CanvasTexture(c);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.anisotropy = 8;
+  return texture;
+}
+
+try {
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.08;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(35, 1, .1, 100);
+  camera.position.set(0,0,4.8);
+  scene.add(new THREE.HemisphereLight(0xffffff,0xb8b9ca,2.2));
+  const key = new THREE.DirectionalLight(0xffffff,3.1); key.position.set(-3,4,5); scene.add(key);
+  const rim = new THREE.DirectionalLight(0x9ba8ff,1.7); rim.position.set(4,1,-4); scene.add(rim);
+
+  const ball = new THREE.Mesh(new THREE.SphereGeometry(1.38,128,96), new THREE.MeshPhysicalMaterial({
+    map:createPatternTexture(), roughness:.32, metalness:.01, clearcoat:.6, clearcoatRoughness:.22
+  }));
+  scene.add(ball);
+  const shadow = new THREE.Mesh(new THREE.CircleGeometry(1.45,64), new THREE.MeshBasicMaterial({color:0x9b9b8d,transparent:true,opacity:.10}));
+  shadow.rotation.x = -Math.PI/2; shadow.position.set(0,-1.52,0); shadow.scale.set(1.25,.45,1); scene.add(shadow);
+
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true; controls.dampingFactor = .05; controls.enablePan = false;
+  controls.minDistance = 3.6; controls.maxDistance = 7; controls.autoRotate = true; controls.autoRotateSpeed = .8;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) controls.autoRotate = false;
+
+  function resize() {
+    const width = stage.clientWidth, height = stage.clientHeight;
+    renderer.setSize(width,height,false);
+    camera.aspect = width/height;
+    camera.position.z = window.innerWidth < 650 ? 5.6 : 4.8;
+    camera.updateProjectionMatrix();
+  }
+  new ResizeObserver(resize).observe(stage); resize();
+  function animate() { requestAnimationFrame(animate); controls.update(); renderer.render(scene,camera); }
+  animate();
+} catch (err) {
+  console.error(err);
+  const fallback = document.createElement('div');
+  fallback.style.cssText='position:absolute;inset:0;display:grid;place-items:center;color:#29369c;text-align:center;padding:20px;font-size:13px';
+  fallback.textContent='3D graphics could not start in this browser. Try Chrome with hardware acceleration enabled.';
+  stage.appendChild(fallback);
+}
+</script>
+</body>
+</html>
